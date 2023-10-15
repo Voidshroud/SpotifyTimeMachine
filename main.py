@@ -37,7 +37,6 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ.get("ID"),
 userID = sp.me()["id"]
 playlist = sp.user_playlist_create(userID, f"Top 100 - {dateInput}", False, False, f"Top 100 chart for {dateInput}")
 
-
 for song in songs:
     try:
         result = sp.search(song)
