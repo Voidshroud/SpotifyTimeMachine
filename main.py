@@ -22,10 +22,18 @@ soup = bs4.BeautifulSoup(response.text, "html.parser")
 
 songs = []
 
-firstSongData = soup.find(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-245 u-max-width-230@tablet-only u-letter-spacing-0028@tablet")
+firstSongData = soup.find(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter"
+                                                                   "-spacing-0021 u-font-size-23@tablet lrv-u-font-size"
+                                                                   "-16 u-line-height-125 u-line-height-normal@mobile-m"
+                                                                   "ax a-truncate-ellipsis u-max-width-245 u-max-width-"
+                                                                   "230@tablet-only u-letter-spacing-0028@tablet")
 songs.append(firstSongData.get_text().strip("\n\t"))
 
-songsData = soup.find_all(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only")
+songsData = soup.find_all(name="h3", id="title-of-a-story", class_="c-title a-no-trucate a-font-primary-bold-s u-letter"
+                                                                   "-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-"
+                                                                   "size-16 u-line-height-125 u-line-height-normal@mobi"
+                                                                   "le-max a-truncate-ellipsis u-max-width-330 u-max-wi"
+                                                                   "dth-230@tablet-only")
 for song in songsData:
     songs.append(song.get_text().strip("\n\t"))
 
